@@ -14,7 +14,8 @@ function randomExample() public {
     gtUint8 random = MpcCore.rand8();
     
     gtBool bit = MpcCore.le(a,random);  // Check if a <= random
-    gtUint8 smaller = MpcCore.mux(bit,a,random);
+    // mux() return the second option when bit is true.
+    gtUint8 smaller = MpcCore.mux(bit,random,a);
     
     uint8 res = MpcCore.decrypt(smaller);
 }
